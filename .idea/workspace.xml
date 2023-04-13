@@ -2,12 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b2dd765-933a-4c8c-b9d4-6fc481db9cd6" name="Changes" comment="create mane files">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Задание ЕГ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Задание ЕГ.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/mane.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Готовое/ER/MedicalLaboratoryNo.20(ER).vsdx" beforeDir="false" afterPath="$PROJECT_DIR$/Готовое/ER/MedicalLaboratoryNo.20(ER).vsdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Часть 2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Задание/Часть 2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mane.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/mane.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/3a0772443a0739141292a5429b952fe6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Всячина/python -m PyQt5.uic.pyuic -x untitled.ui -o untitled.py.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Готовое/ER/DataDictionary.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Готовое/ER/DataDictionary.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Готовое/ER/MedicalLaboratoryNo.20(ER).vsdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/laborant_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/laborant_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/Администратор.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/Руководство по стилю.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/blood.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/blood_services.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/patients.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/patients.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/services.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/Шаблон словаря данных.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Часть 1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Часть 2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Часть 3.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Задание/Часть 4.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,14 +51,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "F:/Задание ЕГ",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Задание ЕГ&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Zadanie_EG\app" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.mane (1)">
     <configuration name="3.10" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Задание ЕГ" />
@@ -104,14 +128,83 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="proba" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Задание ЕГ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/proba.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="proba2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Задание ЕГ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/proba2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Задание ЕГ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.3.10" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.proba" />
+      <item itemvalue="Python.proba2" />
       <item itemvalue="Python.mane (1)" />
       <item itemvalue="Python.mane" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.mane (1)" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.proba" />
+        <item itemvalue="Python.proba2" />
         <item itemvalue="Python.mane" />
       </list>
     </recent_temporary>
@@ -132,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681225882750</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="create mane files">
+      <created>1681306817839</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681306817839</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
