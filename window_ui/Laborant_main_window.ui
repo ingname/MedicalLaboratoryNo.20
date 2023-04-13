@@ -32,7 +32,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <property name="iconSize">
     <size>
@@ -592,7 +592,7 @@
      <property name="geometry">
       <rect>
        <x>370</x>
-       <y>0</y>
+       <y>40</y>
        <width>270</width>
        <height>60</height>
       </rect>
@@ -648,6 +648,24 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tableView">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>991</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>5</pointsize>
+      </font>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectItems</enum>
      </property>
     </widget>
    </widget>
