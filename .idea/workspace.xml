@@ -2,31 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b2dd765-933a-4c8c-b9d4-6fc481db9cd6" name="Changes" comment="create mane files">
-      <change afterPath="$PROJECT_DIR$/app/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Work/Часть 2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Work/Часть 2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Work/Часть 3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Work/Часть 3.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Work/Часть 4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Work/Часть 4.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/mane.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/mane.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/3a0772443a0739141292a5429b952fe6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Всячина/python -m PyQt5.uic.pyuic -x untitled.ui -o untitled.py.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Готовое/ER/DataDictionary.drawio" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Готовое/ER/DataDictionary.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Готовое/ER/MedicalLaboratoryNo.20(ER).vsdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/laborant_1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/laborant_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/Администратор.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы 2/Руководство по стилю.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/blood.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/blood_services.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/patients.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/patients.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/services.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/users.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Ресурсы/Шаблон словаря данных.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Часть 1.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Часть 2.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Часть 3.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Задание/Часть 4.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/window_ui/untitled.ui" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

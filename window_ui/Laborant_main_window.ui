@@ -187,37 +187,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>810</x>
-       <y>210</y>
-       <width>161</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Comic Sans MS</family>
-       <pointsize>15</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>Сергеевич</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_7">
      <property name="enabled">
       <bool>true</bool>
@@ -225,7 +194,7 @@
      <property name="geometry">
       <rect>
        <x>810</x>
-       <y>230</y>
+       <y>220</y>
        <width>161</width>
        <height>21</height>
       </rect>
@@ -286,7 +255,7 @@
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
-     <string>Сформировать отчет</string>
+     <string>Заказ</string>
     </attribute>
     <widget class="QLabel" name="label_9">
      <property name="geometry">
@@ -344,7 +313,7 @@
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Сформировать отчет</string>
+      <string>Заказ</string>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -366,37 +335,6 @@
       <string>Сформировать заказ</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_14">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>140</y>
-       <width>231</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Comic Sans MS</family>
-       <pointsize>18</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>Код пробирки</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_15">
      <property name="enabled">
       <bool>true</bool>
@@ -404,7 +342,7 @@
      <property name="geometry">
       <rect>
        <x>230</x>
-       <y>190</y>
+       <y>200</y>
        <width>231</width>
        <height>31</height>
       </rect>
@@ -432,7 +370,7 @@
      <property name="geometry">
       <rect>
        <x>710</x>
-       <y>240</y>
+       <y>250</y>
        <width>221</width>
        <height>31</height>
       </rect>
@@ -448,7 +386,7 @@
      <property name="geometry">
       <rect>
        <x>230</x>
-       <y>240</y>
+       <y>250</y>
        <width>231</width>
        <height>31</height>
       </rect>
@@ -479,7 +417,7 @@
      <property name="geometry">
       <rect>
        <x>230</x>
-       <y>290</y>
+       <y>300</y>
        <width>231</width>
        <height>31</height>
       </rect>
@@ -503,52 +441,11 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="label_18">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>340</y>
-       <width>231</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Comic Sans MS</family>
-       <pointsize>18</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>Отчество</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
        <x>460</x>
-       <y>240</y>
-       <width>231</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>140</y>
+       <y>250</y>
        <width>231</width>
        <height>31</height>
       </rect>
@@ -558,17 +455,7 @@
      <property name="geometry">
       <rect>
        <x>460</x>
-       <y>290</y>
-       <width>231</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>340</y>
+       <y>300</y>
        <width>231</width>
        <height>31</height>
       </rect>
@@ -609,13 +496,88 @@
      <property name="geometry">
       <rect>
        <x>460</x>
-       <y>190</y>
+       <y>200</y>
        <width>231</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
       <string>Добавить услуги</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_12">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>150</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Сгенерировать шриткод</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_22">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>150</y>
+       <width>231</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Шртихкод</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_23">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>150</y>
+       <width>231</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Штрихкодик</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>
