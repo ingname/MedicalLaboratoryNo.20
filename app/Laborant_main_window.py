@@ -259,8 +259,6 @@ class Ui_Dialog_2(object):
         self.label_13.setAlignment(QtCore.Qt.AlignCenter)
         self.label_13.setObjectName("label_13")
 
-        self.insert()
-
         self.retranslateUi(Dialog)
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -290,6 +288,7 @@ class Ui_Dialog_2(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Dialog", "Просмотреть отчет"))
         self.label_2.setText(_translate("Dialog", "10:24"))
         self.label_13.setText(_translate("Dialog", "Окончание времени сеанса"))
+        self.insert()
 
     def insert(self):
         connection = False

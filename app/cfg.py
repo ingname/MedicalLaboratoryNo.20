@@ -1,5 +1,3 @@
-
-
 host = 'localhost'
 user = 'postgres'
 password = '7393'

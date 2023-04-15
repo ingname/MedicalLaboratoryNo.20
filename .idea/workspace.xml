@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b2dd765-933a-4c8c-b9d4-6fc481db9cd6" name="Changes" comment="create mane files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Laborant_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Laborant_main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mane.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/mane.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/untitled.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/untitled.py" afterDir="false" />
-    </list>
+    <list default="true" id="2b2dd765-933a-4c8c-b9d4-6fc481db9cd6" name="Changes" comment="create mane files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,20 +25,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "F:/Задание ЕГ",
-    "settings.editor.selected.configurable": "debugger.dataViews.python.type.renderers"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Задание ЕГ&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;debugger.dataViews.python.type.renderers&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Zadanie_EG\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.untitled">
+  <component name="RunManager" selected="Python.mane (1)">
     <configuration name="3.10" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Задание ЕГ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,8 +175,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.untitled" />
         <item itemvalue="Python.mane (1)" />
+        <item itemvalue="Python.untitled" />
         <item itemvalue="Python.Laborant_main_window" />
         <item itemvalue="Python.mane_test" />
         <item itemvalue="Python.test" />
