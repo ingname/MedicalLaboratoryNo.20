@@ -1,6 +1,6 @@
 import sys  # Необходимо для завершения программы без происшествий, см. ласт строчку кода
 from PyQt5 import QtWidgets, QtGui  # Основные классы из библиотеки
-from untitled import Ui_Dialog  # Импорт окна из QT designer файла
+from window_ui.Laborant_main_window import Ui_Dialog  # Импорт окна из QT designer файла
 
 # Стандартный кусок кода, в котором создаем класс окна и наследуем его от класса QtWidgets.QMainWindow
 # __init__ необходимо для передачи аргументов, если такие есть, и эта функция выполняется сразу при обьявлении класса
