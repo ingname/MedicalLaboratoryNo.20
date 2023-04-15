@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b2dd765-933a-4c8c-b9d4-6fc481db9cd6" name="Changes" comment="create mane files">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Also/python -m PyQt5.uic.pyuic -x Laborant_main_window.ui -o Laborant_main_window.py.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Work/~$асть 2.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Work/~$асть 3.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Work/~$асть 4.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mane_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/window_ui/Laborant_main_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Also/python -m PyQt5.uic.pyuic -x untitled.ui -o untitled.py.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/window_ui/Laborant_main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/window_ui/Laborant_main_window.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/cfg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mane.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/mane.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +42,7 @@
       <recent name="F:\Zadanie_EG\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.mane (1)">
+  <component name="RunManager" selected="Python.untitled">
     <configuration name="3.10" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Задание ЕГ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -63,6 +56,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="3.10" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Laborant_main_window" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Задание ЕГ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/Laborant_main_window.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,48 +127,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="proba" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Задание ЕГ" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/proba.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="proba2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Задание ЕГ" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/proba2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Задание ЕГ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,21 +148,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="untitled" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Задание ЕГ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/untitled.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.3.10" />
+      <item itemvalue="Python.Laborant_main_window" />
+      <item itemvalue="Python.untitled" />
       <item itemvalue="Python.mane (1)" />
       <item itemvalue="Python.mane_test" />
-      <item itemvalue="Python.proba2" />
-      <item itemvalue="Python.proba" />
       <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.untitled" />
         <item itemvalue="Python.mane (1)" />
+        <item itemvalue="Python.Laborant_main_window" />
         <item itemvalue="Python.mane_test" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.proba" />
-        <item itemvalue="Python.proba2" />
       </list>
     </recent_temporary>
   </component>
