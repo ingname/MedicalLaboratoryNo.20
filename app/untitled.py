@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import  QDialog
 from cfg import *
 import psycopg2
-from Laborant_main_window import Ui_Dialog as Ui
+from Laborant_main_window import Ui_Dialog as UiL
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -151,7 +151,8 @@ class Ui_Dialog(object):
             check_pass = cur.fetchone()
             try:
                 if str(check_pass[0]) == str(self.user_password) and str(check_login[0]) == str(self.user_login):
-                    win
+                    pass
+                    
             except:
                 print('ошибка')
 
