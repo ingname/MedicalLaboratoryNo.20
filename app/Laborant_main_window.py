@@ -5,7 +5,7 @@ import psycopg2
 from PyQt5.QtGui import QPixmap
 import time
 
-class Ui_Dialog(object):
+class Ui_Dialog_2(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(1011, 637)
@@ -291,10 +291,6 @@ class Ui_Dialog(object):
         self.label_2.setText(_translate("Dialog", "10:24"))
         self.label_13.setText(_translate("Dialog", "Окончание времени сеанса"))
 
-
-    def timer(self):
-        pass
-
     def insert(self):
         connection = False
 
@@ -313,7 +309,7 @@ class Ui_Dialog(object):
             with connection.cursor() as cursor:
                 cursor.execute(
                     f"""SELECT name, lastname
-	FROM public.users WHERE login = '{login}' AND password = '{passw}';"""
+    FROM public.users WHERE login = '{login}' AND password = '{passw}';"""
                 )
                 result = cursor.fetchall()
 
@@ -336,13 +332,13 @@ class Ui_Dialog(object):
         self.label_12.setPixmap(pixmap)
         self.label_12.resize(pixmap.width(), pixmap.height())
 
-
         pixmap = QPixmap("img/laborant_1.jpg")
         self.label_4.setPixmap(pixmap)
         self.label_4.resize(pixmap.width(), pixmap.height())
         self.timer_def()
 
-
+    def timer(self):
+        pass
 
     def exits(self):
         try:
@@ -357,11 +353,10 @@ class Ui_Dialog(object):
 
 
 
-
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
+    ui = Ui_Dialog_2()
     ui.setupUi(Dialog)
     Dialog.show()
     sys.exit(app.exec_())

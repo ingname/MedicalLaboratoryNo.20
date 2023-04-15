@@ -9,10 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import  QDialog
+from PyQt5.QtWidgets import QDialog
 from cfg import *
 import psycopg2
-from Laborant_main_window import Ui_Dialog as UiL
+from Laborant_main_window import Ui_Dialog_2 as UiL
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -151,10 +151,13 @@ class Ui_Dialog(object):
             check_pass = cur.fetchone()
             try:
                 if str(check_pass[0]) == str(self.user_password) and str(check_login[0]) == str(self.user_login):
-                    pass
-                    
-            except:
-                print('ошибка')
+                    Dialog.close()
+                    ui2 = UiL()
+                    ui2.setupUi(Dialog=Dialog)
+                    Dialog.show()
+
+            except Exception as _ex:
+                print('ошибка ', _ex)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -168,8 +171,8 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "Войти"))
         self.pushButton_2.setText(_translate("Dialog", "*"))
         self.pushButton_3.setText(_translate("Dialog", "Заменить каптчу"))
-        self.lineEdit.setText(_translate("Dialog", "Логин"))
-        self.lineEdit_2.setText(_translate("Dialog", "Пароль"))
+        self.lineEdit.setText(_translate("Dialog", "chacking0"))
+        self.lineEdit_2.setText(_translate("Dialog", "4tzqHdkqzo4"))
         self.lineEdit_3.setText(_translate("Dialog", "Капча"))
         self.label_2.setText(_translate("Dialog", "Вы ввели не правильные данные"))
         self.label_3.setText(_translate("Dialog", "10 сек."))

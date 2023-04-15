@@ -1,6 +1,6 @@
 import sys  # Необходимо для завершения программы без происшествий, см. ласт строчку кода
 from PyQt5 import QtWidgets, QtGui  # Основные классы из библиотеки
-from Laborant_main_window import Ui_Dialog  # Импорт окна из QT designer файла
+from untitled import Ui_Dialog  # Импорт окна из QT designer файла
 
 # Стандартный кусок кода, в котором создаем класс окна и наследуем его от класса QtWidgets.QMainWindow
 # __init__ необходимо для передачи аргументов, если такие есть, и эта функция выполняется сразу при обьявлении класса
@@ -10,7 +10,7 @@ class Interface(QtWidgets.QMainWindow):
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
         self.setWindowTitle('Medic')
-        self.ui.insert()
+
 
         icon = QtGui.QIcon("img/1.png")
         self.setWindowIcon(icon)
