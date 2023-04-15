@@ -18,7 +18,7 @@ class Interface(QtWidgets.QMainWindow):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     win = Interface()
-    win.resize(1000, 600)
+    win.resize(1011, 637)
     win.show()
     sys.exit(app.exec_())
 
