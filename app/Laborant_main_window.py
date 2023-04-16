@@ -7,7 +7,7 @@ from PyQt5.QtGui import QPixmap
 
 class Ui_Dialog_2(object):
     def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
+        Dialog.setObjectName("Medic")
         Dialog.resize(1011, 637)
         icon = QtGui.QIcon("img/1.png")
         Dialog.setWindowIcon(icon)

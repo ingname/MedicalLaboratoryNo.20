@@ -13,6 +13,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Laborant_add_paccient(object):
     def setupUi(self, Laborant_add_paccient):
+        Laborant_add_paccient.setObjectName("Medic")
+        Laborant_add_paccient.resize(1011, 637)
+        icon = QtGui.QIcon("img/1.png")
+        Laborant_add_paccient.setWindowIcon(icon)
         Laborant_add_paccient.setObjectName("Laborant_add_paccient")
         Laborant_add_paccient.resize(600, 700)
         self.label_16 = QtWidgets.QLabel(Laborant_add_paccient)
@@ -188,7 +192,7 @@ class Ui_Laborant_add_paccient(object):
 
     def retranslateUi(self, Laborant_add_paccient):
         _translate = QtCore.QCoreApplication.translate
-        Laborant_add_paccient.setWindowTitle(_translate("Laborant_add_paccient", "Dialog"))
+        Laborant_add_paccient.setWindowTitle(_translate("Laborant_add_paccient", "Medic"))
         self.label_16.setText(_translate("Laborant_add_paccient", "Фамилия"))
         self.label_17.setText(_translate("Laborant_add_paccient", "Имя"))
         self.label_20.setText(_translate("Laborant_add_paccient", "Добавте пациента"))

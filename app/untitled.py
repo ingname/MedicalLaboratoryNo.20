@@ -3,8 +3,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(1000, 600)
+        Dialog.setObjectName("Medic")
+        Dialog.resize(1011, 637)
+        icon = QtGui.QIcon("img/1.png")
+        Dialog.setWindowIcon(icon)
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(365, 40, 270, 60))
         font = QtGui.QFont()
@@ -117,7 +119,7 @@ class Ui_Dialog(object):
                 self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Normal)
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Medic"))
         self.label.setText(_translate("Dialog", "Авторизация"))
         self.pushButton.setText(_translate("Dialog", "Войти"))
         self.pushButton_2.setText(_translate("Dialog", "*"))
