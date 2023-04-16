@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QDialog
+from threading import Timer
 from cfg import *
 import psycopg2
 from Laborant_main_window import Ui_Dialog_2 as UiL
@@ -68,7 +69,7 @@ class Ui_Dialog(object):
         self.lineEdit_3.setFont(font)
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.label_2 = QtWidgets.QLabel(Dialog)
-        self.label_2.setGeometry(QtCore.QRect(330, 400, 401, 41))
+        self.label_2.setGeometry(QtCore.QRect(200, 400, 600, 41))
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(17)
@@ -110,8 +111,12 @@ class Ui_Dialog(object):
         self.label_5.setTextFormat(QtCore.Qt.AutoText)
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
+        self.label_2.close()
+        self.label_3.close()
 
         self.pushButton.pressed.connect(lambda: log(self))
+
+        self.time_error = 0
 
         def log(self):
             connection = False
@@ -123,14 +128,6 @@ class Ui_Dialog(object):
                     database=db_name,
                     password=password
                 )
-
-                with connection.cursor() as cursor:
-                    cursor.execute(
-                        """SELECT login, password FROM public.users"""
-                    )
-                    result = cursor.fetchall()
-                    cursor.close()
-                    print(result)
 
             except Exception as _ex:
                 print("[ИНФО] Ошибка при работе с PostrgeSQL", _ex)
@@ -149,6 +146,8 @@ class Ui_Dialog(object):
             check_login = cur.fetchone()
             cur.execute(f"SELECT password FROM public.users WHERE login = '{self.user_login}'")
             check_pass = cur.fetchone()
+
+
             try:
                 if str(check_pass[0]) == str(self.user_password) and str(check_login[0]) == str(self.user_login):
                     Dialog.close()
@@ -157,7 +156,30 @@ class Ui_Dialog(object):
                     Dialog.show()
 
             except Exception as _ex:
-                print('ошибка ', _ex)
+                if self.time_error != 2:
+                    self.time_error += 1
+                    self.label_2.setText("Неверные данные для авторизации")
+                    self.label_2.show()
+                    timer = Timer(3.00, self.label_2.close)
+                    self.label_3.close()
+                    timer.start()
+                elif self.time_error == 2:
+                    self.label_2.setText("Вы ввели не верные данные, блокировка на 10 сек.")
+                    self.label_2.show()
+                    self.label_3.show()
+                    timer = Timer(10.00, self.label_2.close)
+                    timer.start()
+                    self.time_error = 0
+                else:
+                    self.time_error += 1
+                    print(_ex)
+                    self.label_2.setText("Неверные данные для авторизации")
+                    self.label_2.show()
+                    timer = Timer(3.00, self.label_2.close)
+                    timer.start()
+
+
+
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)

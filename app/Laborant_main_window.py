@@ -9,6 +9,9 @@ class Ui_Dialog_2(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(1011, 637)
+        icon = QtGui.QIcon("img/1.png")
+        Dialog.setWindowIcon(icon)
+
         self.tabWidget = QtWidgets.QTabWidget(Dialog)
         self.tabWidget.setEnabled(True)
         self.tabWidget.setGeometry(QtCore.QRect(0, 0, 1011, 581))
@@ -265,7 +268,7 @@ class Ui_Dialog_2(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Medic"))
         self.label.setText(_translate("Dialog", "Главная"))
         self.pushButton_8.setText(_translate("Dialog", "Выйти"))
         self.label_3.setText(_translate("Dialog", "Владимиров"))
@@ -334,7 +337,6 @@ class Ui_Dialog_2(object):
         pixmap = QPixmap("img/laborant_1.jpg")
         self.label_4.setPixmap(pixmap)
         self.label_4.resize(pixmap.width(), pixmap.height())
-        self.timer_def()
 
     def timer(self):
         pass
@@ -345,9 +347,6 @@ class Ui_Dialog_2(object):
             sys.exit(QtWidgets.QApplication(sys.argv))
         except Exception as _ex:
             print(f'[ИНФО] Следующая ошибка: {_ex}')
-
-    def timer_def(self):
-        pass
 
 
 
