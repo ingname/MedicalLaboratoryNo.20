@@ -5,10 +5,12 @@ from untitled import Ui_Dialog as Ui1
 from Laborant_main_window import Ui_Dialog_2 as Ui2L
 from Laborant_add_paccient import Ui_Laborant_add_paccient as Ui3L
 from Laborant_barcode_window import Ui_Laborant_barcode as Ui4L
+from Laborant_service_window import Ui_Choose_Service as Ui5L
 import psycopg2
 from threading import Timer
 from PyQt5.QtCore import QTimer
 from cfg import *
+from PyQt5.QtGui import QPixmap
 # import pyglet
 
 
@@ -20,6 +22,15 @@ ui.setupUi(Dialog)
 Dialog.show()
 # mus = pyglet.resource.media("ballin.mp3")
 # mus.play()
+
+
+def open_service_window():
+    global open_service
+    open_service = QtWidgets.QDialog()
+    ui5 = Ui5L()
+    ui5.setupUi(open_service)
+    open_window_service()
+    ui5.pushButton_13.clicked.connect(lambda: return_windowdd())
 
 
 def open_barcode_add():
@@ -89,6 +100,7 @@ def open_barcode_add():
             datahui = str(datahui)[:13]
         ui4.lineEdit.setText(f'{datahui}')
         ui4.label_15.setText(f'{datahui}')
+        ui4.label_21.show()
 
     def huynaaa():
         global qr_code
@@ -111,10 +123,17 @@ def return_window13414():
     barcode_add.close()
     OtherDialog.show()
 
+def return_windowdd():
+    open_service.close()
+    OtherDialog.show()
+
 def open_window_barcode():
     OtherDialog.close()
     barcode_add.show()
 
+def open_window_service():
+    OtherDialog.close()
+    open_service.show()
 def return_window3():
     paccient_add.close()
     OtherDialog.show()
@@ -126,12 +145,38 @@ def return_window4():
 def return_window2():
     OtherDialog.close()
     paccient_add.show()
+
+
+
+
 def open_window():
     global OtherDialog
     OtherDialog = QtWidgets.QDialog()
     global ui2
     ui2 = Ui2L()
     ui2.setupUi(OtherDialog)
+
+    ui.pushButton_3.clicked.connect(lambda: capimg())
+
+
+
+    def capimg():
+        pixmap = QPixmap("img/c1.png")
+        ui2.label_4.setPixmap(pixmap)
+        ui2.label_4.resize(pixmap.width(), pixmap.height())
+
+        if ui.pushButton_3.isChecked():
+            pixmap = QPixmap("img/c1.png")
+            ui.label_4.setPixmap(pixmap)
+            ui.label_4.resize(pixmap.width(), pixmap.height())
+            ui.label_18.setText('123321')
+            ui.label_18.hide()
+        else:
+            pixmap = QPixmap("img/c2.png")
+            ui.label_4.setPixmap(pixmap)
+            ui.label_4.resize(pixmap.width(), pixmap.height())
+            ui.label_18.setText('qwerty')
+            ui.label_18.hide()
 
 
     def log():
@@ -163,7 +208,9 @@ def open_window():
         check_pass = cur.fetchone()
 
         try:
-            if str(check_pass[0]) == str(user_password) and str(check_login[0]) == str(user_login):
+            huiesos = ui.lineEdit_3.text()
+            huit = str(ui.label_18.text())
+            if str(check_pass[0]) == str(user_password) and str(check_login[0]) == str(user_login) and huiesos == huit:
                 with open("data_user.txt", 'w') as f:
                     f.write(f"{str(user_login)}")
                 with open("data_pass.txt", 'w') as f:
@@ -175,6 +222,7 @@ def open_window():
                 OtherDialog.show()
 
             else:
+                capimg()
                 if ui.time_error != 2:
                     ui.time_error += 1
                     ui.label_2.setText("Неверные данные для авторизации")
@@ -182,6 +230,10 @@ def open_window():
                     timer2 = Timer(3.00, ui.label_2.close)
                     ui.label_3.close()
                     timer2.start()
+                    ui.pushButton_3.show()
+                    ui.lineEdit_3.show()
+                    capimg()
+
                 elif ui.time_error == 2:
                     ui.label_2.setText("Вы ввели не верные данные, блокировка на 10 сек.")
                     ui.label_2.show()
@@ -195,6 +247,8 @@ def open_window():
                     ui.label_2.show()
                     timer2 = Timer(3.00, ui.label_2.close)
                     timer2.start()
+                    ui.pushButton_3.show()
+                    ui.lineEdit_3.show()
 
         except Exception as _ex:
             ui.time_error += 1
@@ -202,16 +256,23 @@ def open_window():
             ui.label_2.show()
             timer2 = Timer(3.00, ui.label_2.close)
             timer2.start()
+            ui.pushButton_3.show()
+            ui.lineEdit_3.show()
+            capimg()
             print(_ex)
     log()
     def return_window():
         OtherDialog.close()
         Dialog.show()
-        barcode_add.hide()
+        barcode_add.close()
         return_window4()
 
         timers.disconnect()
 
+    def return_hui():
+        OtherDialog.close()
+        Dialog.show()
+        timers.disconnect()
 
     def timer():
         try:
@@ -248,6 +309,60 @@ def open_window():
         return_window()
 
 
+    def zaebalsya():
+        qr = ui2.label_23.text()
+        sename = ui2.lineEdit.text()
+        name = ui2.lineEdit_3.text()
+
+        if qr != '' and sename != '' and name != '':
+
+            qr = int(ui2.label_23.text())
+            connection = False
+
+            try:
+                connection = psycopg2.connect(
+                    host=host,
+                    user=user,
+                    database=db_name,
+                    password=password
+                )
+
+            except Exception as _ex:
+                print("[ИНФО] Ошибка при работе с PostrgeSQL", _ex)
+
+            cur = connection.cursor()
+            cur.execute(f'''SELECT name, lastname
+	FROM public.patient WHERE name = '{name}' and lastname = '{sename}';''')
+            check_login = cur.fetchall()
+            try:
+                if check_login == []:
+                    ui2.label_19.show()
+                    ui2.label_19.setText('Данного пользователя не существует')
+                    timer2 = Timer(3.00, ui2.label_19.close)
+                    timer2.start()
+                else:
+                    cur.execute(f'''SELECT id
+        FROM public.patient WHERE name = '{name}' and lastname = '{sename}';''')
+                    id_pac = int(cur.fetchall()[0][0])
+                    cur.execute(f'''INSERT INTO orders(order_id, id_patient) VALUES ({qr}, {id_pac});''')
+                    connection.commit()
+                    connection.close()
+                    cur.close()
+                    ui2.label_19.show()
+                    ui2.label_19.setText('Запись успешно занесена')
+                    timer2 = Timer(3.00, ui2.label_19.close)
+                    timer2.start()
+            except:
+                ui2.label_19.show()
+                ui2.label_19.setText('Такая запись уже существует')
+                timer2 = Timer(3.00, ui2.label_19.close)
+                timer2.start()
+        else:
+            ui2.label_19.show()
+            ui2.label_19.setText('Вы не ввели данные')
+            timer2 = Timer(3.00, ui2.label_19.close)
+            timer2.start()
+
 
     def huiny():
         ui.label_2.close()
@@ -261,9 +376,11 @@ def open_window():
 
 
 
-    ui2.pushButton_8.clicked.connect(lambda: return_window())
+    ui2.pushButton_8.clicked.connect(lambda: return_hui())
     ui2.pushButton_10.clicked.connect(lambda: open_paccient_add())
     ui2.pushButton_12.clicked.connect(lambda: open_barcode_add())
+    ui2.pushButton_9.clicked.connect(lambda: zaebalsya())
+    ui2.pushButton_11.clicked.connect(lambda: open_service_window())
 
 ui.pushButton.pressed.connect(lambda: open_window())
 

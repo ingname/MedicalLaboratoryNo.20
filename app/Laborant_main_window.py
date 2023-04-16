@@ -262,6 +262,7 @@ class Ui_Dialog_2(object):
         self.label_13.setAlignment(QtCore.Qt.AlignCenter)
         self.label_13.setObjectName("label_13")
         self.label_13.close()
+        self.label_19.close()
 
         self.retranslateUi(Dialog)
         self.tabWidget.setCurrentIndex(0)
@@ -298,6 +299,7 @@ class Ui_Dialog_2(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Dialog", "Просмотреть отчет"))
         self.label_2.setText(_translate("Dialog", "10:24"))
         self.label_13.setText(_translate("Dialog", "Окончание времени сеанса"))
+        self.label_23.setText('')
 
 
     def qrcode(self):

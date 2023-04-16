@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QPixmap
 
 
 class Ui_Laborant_barcode(object):
@@ -23,11 +24,14 @@ class Ui_Laborant_barcode(object):
         self.label_21.setFont(font)
         self.label_21.setStyleSheet("color: rgb(73, 140, 81);")
         self.label_21.setFrameShape(QtWidgets.QFrame.Box)
-        self.label_21.setLineWidth(5)
+        self.label_21.setLineWidth(0)
         self.label_21.setText("")
         self.label_21.setTextFormat(QtCore.Qt.AutoText)
         self.label_21.setAlignment(QtCore.Qt.AlignCenter)
         self.label_21.setObjectName("label_21")
+        pixmap = QPixmap("img/da.png")
+        self.label_21.setPixmap(pixmap)
+        self.label_21.close()
         self.label_14 = QtWidgets.QLabel(Laborant_barcode)
         self.label_14.setEnabled(True)
         self.label_14.setGeometry(QtCore.QRect(10, 210, 231, 31))

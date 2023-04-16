@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
+
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Medic")
@@ -52,7 +53,7 @@ class Ui_Dialog(object):
         self.pushButton_2.setCheckable(True)
         self.pushButton_2.setChecked(True)
 
-        self.pushButton_2.clicked.connect(lambda: zvezda(self))
+        self.pushButton_2.clicked.connect(lambda: self.zvezda())
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.lineEdit_3 = QtWidgets.QLineEdit(Dialog)
         self.lineEdit_3.setGeometry(QtCore.QRect(330, 310, 111, 20))
@@ -106,17 +107,35 @@ class Ui_Dialog(object):
         self.label_5.setObjectName("label_5")
         self.label_2.close()
         self.label_3.close()
+        self.pushButton_3.hide()
+        self.lineEdit_3.hide()
+        self.pushButton_3.setCheckable(True)
+        self.pushButton_3.setChecked(True)
+
+        self.label_18 = QtWidgets.QLabel(Dialog)
+        self.label_18.setGeometry(QtCore.QRect(550, 270, 161, 21))
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(14)
+        self.label_18.setFont(font)
+        self.label_18.setStyleSheet("")
+        self.label_18.setTextFormat(QtCore.Qt.AutoText)
+        self.label_18.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_18.setObjectName("label_18")
+        self.label_18.setText('')
+        self.lineEdit_3.setText('')
 
         self.time_error = 0
+
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-        def zvezda(self):
-            if self.pushButton_2.isChecked():
-                self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
-            else:
-                self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Normal)
+    def zvezda(self):
+        if self.pushButton_2.isChecked():
+            self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
+        else:
+            self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Normal)
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Medic"))
@@ -126,7 +145,6 @@ class Ui_Dialog(object):
         self.pushButton_3.setText(_translate("Dialog", "Заменить каптчу"))
         self.lineEdit.setText(_translate("Dialog", "chacking0"))
         self.lineEdit_2.setText(_translate("Dialog", "4tzqHdkqzo4"))
-        self.lineEdit_3.setText(_translate("Dialog", "Капча"))
         self.label_2.setText(_translate("Dialog", "Вы ввели не правильные данные"))
         self.label_3.setText(_translate("Dialog", "10 сек."))
         self.label_5.setText(_translate("Dialog", "Показать пароль"))
