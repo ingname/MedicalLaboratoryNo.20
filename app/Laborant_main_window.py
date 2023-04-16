@@ -1,9 +1,10 @@
+import datetime
 import sys
 from cfg import host, user, db_name, password, port
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import QTimer
 import psycopg2
 from PyQt5.QtGui import QPixmap
-import time
 
 class Ui_Dialog_2(object):
     def setupUi(self, Dialog):
@@ -261,10 +262,22 @@ class Ui_Dialog_2(object):
         self.label_13.setTextFormat(QtCore.Qt.AutoText)
         self.label_13.setAlignment(QtCore.Qt.AlignCenter)
         self.label_13.setObjectName("label_13")
+        self.label_13.close()
 
         self.retranslateUi(Dialog)
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+        self.now = 1200
+        self.now_m = 20
+        self.now_s = 0
+        self.now2 = 59
+        self.timer()
+        self.timers = QTimer()
+        self.timers.timeout.connect(self.timer)
+        self.timers.start(10)
+
+
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
@@ -333,13 +346,38 @@ class Ui_Dialog_2(object):
         self.label_9.resize(pixmap.width(), pixmap.height())
         self.label_12.setPixmap(pixmap)
         self.label_12.resize(pixmap.width(), pixmap.height())
-
         pixmap = QPixmap("img/laborant_1.jpg")
         self.label_4.setPixmap(pixmap)
         self.label_4.resize(pixmap.width(), pixmap.height())
 
     def timer(self):
-        pass
+        if self.now_m - 1 == 0 and self.now_s == 0:
+            self.end_of_session()
+            return False
+        if self.now % 60 == 0:
+            self.now_m = self.now / 60
+            self.label_2.setText(f'{int(self.now_m - 1)}:{int(self.now_s)}')
+            self.now2 = 59
+        if self.now2 % 1 == 0:
+            self.now_s = self.now2
+            self.label_2.setText(f'{int(self.now_m - 1)}:{int(self.now_s)}')
+            self.now2 -= 1
+            self.now -= 1
+        if self.now_s < 10:
+            self.now_s = self.now2 + 1
+            self.label_2.setText(f'{int(self.now_m - 1)}:0{int(self.now_s)}')
+        if self.now_m <= 5:
+            self.label_13.setText(f'Окончание сенса через: {int(self.now_m - 1)}:{int(self.now_s)}')
+            if self.now_s < 10:
+                self.label_13.setText(f'Окончание сенса через: {int(self.now_m - 1)}:0{int(self.now_s)}')
+            self.label_13.show()
+
+
+    def end_of_session(self):
+        self.timers.disconnect()
+        print('Окончание сеанса')
+
+
 
     def exits(self):
         try:
