@@ -24,6 +24,7 @@ def open_paccient_add():
     ui3.setupUi(paccient_add)
     return_window2()
     ui3.pushButton_14.clicked.connect(lambda: return_window3())
+    ui3.pushButton_13.clicked.connect(lambda: ui3.data_insert())
 
 
 def return_window3():
@@ -159,7 +160,7 @@ def open_window():
     timer()
     timers = QTimer()
     timers.timeout.connect(timer)
-    timers.start(1000)
+    timers.start(10)
 
 
 

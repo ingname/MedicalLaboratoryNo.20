@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b2dd765-933a-4c8c-b9d4-6fc481db9cd6" name="Changes" comment="create mane files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Laborant_add_paccient.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Laborant_add_paccient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Laborant_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Laborant_main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/untitled.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/untitled.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/cfg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
