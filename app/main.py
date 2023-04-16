@@ -140,7 +140,7 @@ def openWindow():
     timer()
     timers = QTimer()
     timers.timeout.connect(timer)
-    timers.start(10)
+    timers.start(1000)
 
 
 
