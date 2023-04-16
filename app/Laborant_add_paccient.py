@@ -181,7 +181,6 @@ class Ui_Laborant_add_paccient(object):
 
         self.retranslateUi(Laborant_add_paccient)
         QtCore.QMetaObject.connectSlotsByName(Laborant_add_paccient)
-        self.data_insert()
 
     def data_insert(self):
         sename = self.lineEdit.text()
@@ -207,8 +206,8 @@ class Ui_Laborant_add_paccient(object):
             with connection.cursor() as cursor:
                 cursor.execute(
                     f"""INSERT INTO public.patient(
-	guid, email, social_sec_number, ein, social_type, phone, passport_s, passport_n, birthdate_timestamp, id, country, ipadress, ua, name, lastname, insurance)
-	VALUES (?, {email}, ?, ?, ?, {phone}, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"""
+	email, social_sec_number, phone, passport_s, passport_n, birthdate_timestamp, name, lastname)
+	VALUES ('{email}', '{polis}', '{phone}', '{ser_pas}', '{nom_pas}', '{birth_day}', '{name}', '{sename}');"""
                 )
 
         except Exception as _ex:

@@ -16,7 +16,6 @@ ui = Ui1()
 ui.setupUi(Dialog)
 Dialog.show()
 
-
 def open_paccient_add():
     global paccient_add
     paccient_add = QtWidgets.QDialog()
@@ -30,6 +29,9 @@ def open_paccient_add():
 def return_window3():
     paccient_add.close()
     OtherDialog.show()
+
+def return_window4():
+    paccient_add.hide()
 
 
 def return_window2():
@@ -115,7 +117,9 @@ def open_window():
     def return_window():
         OtherDialog.close()
         Dialog.show()
+        return_window4()
         timers.disconnect()
+
 
     def timer():
         try:
@@ -149,8 +153,8 @@ def open_window():
         ui.pushButton.hide()
         timer2 = Timer(5.00, huiny)
         timer2.start()
-        return_window3()
         return_window()
+
 
 
     def huiny():
