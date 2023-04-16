@@ -1,8 +1,8 @@
-import os
 import sys
-from PyQt5 import QtWidgets, QtGui, QtCore
+from PyQt5 import QtWidgets
 from untitled import Ui_Dialog as Ui1
 from Laborant_main_window import Ui_Dialog_2 as Ui2L
+from Laborant_add_paccient import Ui_Laborant_add_paccient as Ui3L
 import psycopg2
 from threading import Timer
 from PyQt5.QtCore import QTimer
@@ -17,7 +17,24 @@ ui.setupUi(Dialog)
 Dialog.show()
 
 
-def openWindow():
+def open_paccient_add():
+    global paccient_add
+    paccient_add = QtWidgets.QDialog()
+    ui3 = Ui3L()
+    ui3.setupUi(paccient_add)
+    return_window2()
+    ui3.pushButton_14.clicked.connect(lambda: return_window3())
+
+
+def return_window3():
+    paccient_add.close()
+    OtherDialog.show()
+
+
+def return_window2():
+    OtherDialog.close()
+    paccient_add.show()
+def open_window():
     global OtherDialog
     OtherDialog = QtWidgets.QDialog()
     ui2 = Ui2L()
@@ -94,7 +111,7 @@ def openWindow():
             print(_ex)
     log()
 
-    def returnWindow():
+    def return_window():
         OtherDialog.close()
         Dialog.show()
         timers.disconnect()
@@ -131,7 +148,9 @@ def openWindow():
         ui.pushButton.hide()
         timer2 = Timer(5.00, huiny)
         timer2.start()
-        returnWindow()
+        return_window3()
+        return_window()
+
 
     def huiny():
         ui.label_2.close()
@@ -145,9 +164,11 @@ def openWindow():
 
 
 
-    ui2.pushButton_8.clicked.connect(lambda: returnWindow())
+    ui2.pushButton_8.clicked.connect(lambda: return_window())
+    ui2.pushButton_10.clicked.connect(lambda: open_paccient_add())
 
-ui.pushButton.pressed.connect(lambda: openWindow())
+ui.pushButton.pressed.connect(lambda: open_window())
+
 
 sys.exit(app.exec_())
 
