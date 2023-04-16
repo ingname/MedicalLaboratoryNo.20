@@ -1,10 +1,9 @@
-import datetime
-import sys
+import sys, os
 from cfg import host, user, db_name, password, port
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import QTimer
 import psycopg2
 from PyQt5.QtGui import QPixmap
+
 
 class Ui_Dialog_2(object):
     def setupUi(self, Dialog):
@@ -272,10 +271,7 @@ class Ui_Dialog_2(object):
         self.now_m = 20
         self.now_s = 0
         self.now2 = 59
-        self.timer()
-        self.timers = QTimer()
-        self.timers.timeout.connect(self.timer)
-        self.timers.start(1000)
+
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
@@ -302,13 +298,22 @@ class Ui_Dialog_2(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Dialog", "Просмотреть отчет"))
         self.label_2.setText(_translate("Dialog", "10:24"))
         self.label_13.setText(_translate("Dialog", "Окончание времени сеанса"))
-        self.insert()
+
+
+    def qrcode(self):
+        pass
 
     def insert(self):
         connection = False
 
-        login = 'lraden3'
-        passw = '5Ydp2mz'
+        with open('data_user.txt', 'r', encoding='utf-8') as f:
+            data_user = f.read()
+
+        with open('data_pass.txt', 'r', encoding='utf-8') as f:
+            data_pass = f.read()
+
+        login = str(data_user)
+        passw = str(data_pass)
 
         try:
             connection = psycopg2.connect(
@@ -335,7 +340,7 @@ class Ui_Dialog_2(object):
 
         self.label_5.setText(f'{result[0][0]}')
         self.label_3.setText(f'{result[0][1]}')
-        self.pushButton_8.clicked.connect(lambda: self.exits())
+        self.pushButton_12.clicked.connect(lambda: self.qrcode())
 
         pixmap = QPixmap("img/1.png")
         self.label_8.setPixmap(pixmap)
@@ -347,32 +352,9 @@ class Ui_Dialog_2(object):
         pixmap = QPixmap("img/laborant_1.jpg")
         self.label_4.setPixmap(pixmap)
         self.label_4.resize(pixmap.width(), pixmap.height())
+        os.remove("data_pass.txt")
+        os.remove("data_user.txt")
 
-    def timer(self):
-        if self.now_m - 1 == 0 and self.now_s == 0:
-            self.end_of_session()
-            return False
-        if self.now % 60 == 0:
-            self.now_m = self.now / 60
-            self.label_2.setText(f'{int(self.now_m - 1)}:{int(self.now_s)}')
-            self.now2 = 59
-        if self.now2 % 1 == 0:
-            self.now_s = self.now2
-            self.label_2.setText(f'{int(self.now_m - 1)}:{int(self.now_s)}')
-            self.now2 -= 1
-            self.now -= 1
-        if self.now_s < 10:
-            self.now_s = self.now2 + 1
-            self.label_2.setText(f'{int(self.now_m - 1)}:0{int(self.now_s)}')
-        if self.now_m <= 5:
-            self.label_13.setText(f'Окончание сенса через: {int(self.now_m - 1)}:{int(self.now_s)}')
-            if self.now_s < 10:
-                self.label_13.setText(f'Окончание сенса через: {int(self.now_m - 1)}:0{int(self.now_s)}')
-            self.label_13.show()
-
-    def end_of_session(self):
-        self.timers.disconnect()
-        print('Окончание сеанса')
 
     def exits(self):
         try:
