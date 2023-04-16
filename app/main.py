@@ -1,12 +1,15 @@
+import datetime
 import sys
 from PyQt5 import QtWidgets
 from untitled import Ui_Dialog as Ui1
 from Laborant_main_window import Ui_Dialog_2 as Ui2L
 from Laborant_add_paccient import Ui_Laborant_add_paccient as Ui3L
+from Laborant_barcode_window import Ui_Laborant_barcode as Ui4L
 import psycopg2
 from threading import Timer
 from PyQt5.QtCore import QTimer
 from cfg import *
+# import pyglet
 
 
 app = QtWidgets.QApplication(sys.argv)
@@ -15,6 +18,85 @@ Dialog = QtWidgets.QDialog()
 ui = Ui1()
 ui.setupUi(Dialog)
 Dialog.show()
+# mus = pyglet.resource.media("ballin.mp3")
+# mus.play()
+
+
+def open_barcode_add():
+    global barcode_add
+    barcode_add = QtWidgets.QDialog()
+    ui4 = Ui4L()
+    ui4.setupUi(barcode_add)
+    open_window_barcode()
+    ui4.pushButton_16.clicked.connect(lambda: return_window13414())
+    ui4.pushButton_12.clicked.connect(lambda: podschet_hueti())
+    ui4.pushButton_13.clicked.connect(lambda: podschet_huinu())
+    ui4.pushButton_14.clicked.connect(lambda: huynaaa())
+    ui4.lineEdit.setText('')
+
+    connection = False
+
+    try:
+        connection = psycopg2.connect(
+            host=host,
+            user=user,
+            database=db_name,
+            password=password
+        )
+
+    except Exception as _ex:
+        print("[ИНФО] Ошибка при работе с PostrgeSQL", _ex)
+
+
+    cur = connection.cursor()
+    cur.execute(f"SELECT order_id FROM public.orders;")
+    Check = cur.fetchall()
+    ui4.label_15.setText(f'')
+    ui4.lineEdit.setText('')
+    ui4.label_20.close()
+
+    def podschet_hueti():
+        try:
+            hueta_polnaya = int(ui4.lineEdit.text())
+        except:
+            hueta_polnaya = ''
+            ui4.label_20.show()
+            ui4.label_20.setText('Фигня')
+        if hueta_polnaya == '' or hueta_polnaya == 0:
+            ui4.label_20.show()
+            ui4.label_20.setText('Фигня')
+        else:
+            ui4.label_20.setText('Нормас')
+            cur.execute(f"SELECT order_id FROM public.orders WHERE order_id = {hueta_polnaya}")
+            Hui = cur.fetchall()
+            try:
+                if str(Hui[0][0]) == str(hueta_polnaya):
+                    timer2 = Timer(3.00, ui4.label_20.close)
+                    timer2.start()
+                    ui4.label_20.show()
+                    ui4.label_20.setText('Занято')
+
+            except:
+                datahui = f'{hueta_polnaya}{datetime.date.today().day}0{datetime.date.today().month}{datetime.date.today().year}{Check[-1][0] + int(hueta_polnaya) * 1231}'
+                if int(datahui) > 10000000000000:
+                    datahui = str(datahui)[:13]
+                ui4.lineEdit.setText(f'{datahui}')
+                ui4.label_15.setText(f'{datahui}')
+
+    def podschet_huinu():
+        datahui = f'{datetime.date.today().day + datetime.datetime.now().second * 35}0{datetime.date.today().month + datetime.datetime.now().second * 12}{datetime.date.today().year + datetime.datetime.now().second * 17}{Check[-1][0] + datetime.datetime.now().second * 1231}'
+        if int(datahui) > 10000000000000:
+            datahui = str(datahui)[:13]
+        ui4.lineEdit.setText(f'{datahui}')
+        ui4.label_15.setText(f'{datahui}')
+
+    def huynaaa():
+        global qr_code
+        qr_code = int(ui4.label_15.text())
+        ui2.label_23.setText(str(qr_code))
+        return_window13414()
+
+
 
 def open_paccient_add():
     global paccient_add
@@ -25,6 +107,13 @@ def open_paccient_add():
     ui3.pushButton_14.clicked.connect(lambda: return_window3())
     ui3.pushButton_13.clicked.connect(lambda: ui3.data_insert())
 
+def return_window13414():
+    barcode_add.close()
+    OtherDialog.show()
+
+def open_window_barcode():
+    OtherDialog.close()
+    barcode_add.show()
 
 def return_window3():
     paccient_add.close()
@@ -40,8 +129,10 @@ def return_window2():
 def open_window():
     global OtherDialog
     OtherDialog = QtWidgets.QDialog()
+    global ui2
     ui2 = Ui2L()
     ui2.setupUi(OtherDialog)
+
 
     def log():
         connection = False
@@ -113,11 +204,12 @@ def open_window():
             timer2.start()
             print(_ex)
     log()
-
     def return_window():
         OtherDialog.close()
         Dialog.show()
+        barcode_add.hide()
         return_window4()
+
         timers.disconnect()
 
 
@@ -164,13 +256,14 @@ def open_window():
     timer()
     timers = QTimer()
     timers.timeout.connect(timer)
-    timers.start(10)
+    timers.start(1000)
 
 
 
 
     ui2.pushButton_8.clicked.connect(lambda: return_window())
     ui2.pushButton_10.clicked.connect(lambda: open_paccient_add())
+    ui2.pushButton_12.clicked.connect(lambda: open_barcode_add())
 
 ui.pushButton.pressed.connect(lambda: open_window())
 
