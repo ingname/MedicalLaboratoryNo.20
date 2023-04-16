@@ -277,8 +277,6 @@ class Ui_Dialog_2(object):
         self.timers.timeout.connect(self.timer)
         self.timers.start(10)
 
-
-
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Medic"))
@@ -372,12 +370,9 @@ class Ui_Dialog_2(object):
                 self.label_13.setText(f'Окончание сенса через: {int(self.now_m - 1)}:0{int(self.now_s)}')
             self.label_13.show()
 
-
     def end_of_session(self):
         self.timers.disconnect()
         print('Окончание сеанса')
-
-
 
     def exits(self):
         try:
@@ -385,8 +380,6 @@ class Ui_Dialog_2(object):
             sys.exit(QtWidgets.QApplication(sys.argv))
         except Exception as _ex:
             print(f'[ИНФО] Следующая ошибка: {_ex}')
-
-
 
 
 if __name__ == "__main__":
