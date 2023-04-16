@@ -268,14 +268,14 @@ class Ui_Dialog_2(object):
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-        self.now = 1200
+        self.now = 600
         self.now_m = 20
         self.now_s = 0
         self.now2 = 59
         self.timer()
         self.timers = QTimer()
         self.timers.timeout.connect(self.timer)
-        self.timers.start(10)
+        self.timers.start(1000)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
