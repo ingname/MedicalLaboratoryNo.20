@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import psycopg2
 from cfg import host, user, db_name, password, port
+from threading import Timer
 
 
 class Ui_Laborant_add_paccient(object):
@@ -166,6 +167,20 @@ class Ui_Laborant_add_paccient(object):
         self.label_26.setTextFormat(QtCore.Qt.AutoText)
         self.label_26.setAlignment(QtCore.Qt.AlignCenter)
         self.label_26.setObjectName("label_26")
+
+        self.label_27 = QtWidgets.QLabel(Laborant_add_paccient)
+        self.label_27.setEnabled(True)
+        self.label_27.setGeometry(QtCore.QRect(70, 580, 500, 31))
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(13)
+        self.label_27.setFont(font)
+        self.label_27.setStyleSheet("")
+        self.label_27.setTextFormat(QtCore.Qt.AutoText)
+        self.label_27.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_27.setObjectName("label_26")
+        self.label_27.close()
+
         self.comboBox_2 = QtWidgets.QComboBox(Laborant_add_paccient)
         self.comboBox_2.setGeometry(QtCore.QRect(300, 540, 231, 31))
         self.comboBox_2.setObjectName("comboBox_2")
@@ -181,41 +196,6 @@ class Ui_Laborant_add_paccient(object):
 
         self.retranslateUi(Laborant_add_paccient)
         QtCore.QMetaObject.connectSlotsByName(Laborant_add_paccient)
-
-    def data_insert(self):
-        sename = self.lineEdit.text()
-        name = self.lineEdit_3.text()
-        birth_day = self.lineEdit_4.text()
-        ser_pas = self.lineEdit_5.text()
-        nom_pas = self.lineEdit_6.text()
-        phone = self.lineEdit_7.text()
-        email = self.lineEdit_8.text()
-        polis = self.lineEdit_9.text()
-
-        connection = False
-
-        try:
-            connection = psycopg2.connect(
-                host=host,
-                user=user,
-                port=port,
-                database=db_name,
-                password=password
-            )
-
-            with connection.cursor() as cursor:
-                cursor.execute(
-                    f"""INSERT INTO public.patient(
-	email, social_sec_number, phone, passport_s, passport_n, birthdate_timestamp, name, lastname)
-	VALUES ('{email}', '{polis}', '{phone}', '{ser_pas}', '{nom_pas}', '{birth_day}', '{name}', '{sename}');"""
-                )
-
-        except Exception as _ex:
-            print("[ИНФО] Ошибка при работе с PostrgeSQL:", _ex)
-        finally:
-            if connection:
-                cursor.close()
-                connection.close()
 
 
     def retranslateUi(self, Laborant_add_paccient):
@@ -234,6 +214,7 @@ class Ui_Laborant_add_paccient(object):
         self.label_24.setText(_translate("Laborant_add_paccient", "Номер страхового полиса"))
         self.label_25.setText(_translate("Laborant_add_paccient", "Тип страхового полиса "))
         self.label_26.setText(_translate("Laborant_add_paccient", "Страховая компания"))
+        self.label_27.setText(_translate("Laborant_add_paccient", "Вы не ввели данные или данные имеют плохой тип"))
 
 
 if __name__ == "__main__":

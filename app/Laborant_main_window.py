@@ -292,7 +292,7 @@ class Ui_Dialog_2(object):
         self.label_19.setText(_translate("Dialog", "Вы ввели не существующего пациента, проверьте данные или добавьте пациента"))
         self.pushButton_11.setText(_translate("Dialog", "Добавить услуги"))
         self.pushButton_12.setText(_translate("Dialog", "Сгенерировать шриткод"))
-        self.label_22.setText(_translate("Dialog", "Шртихкод"))
+        self.label_22.setText(_translate("Dialog", "Штрихкод"))
         self.label_23.setText(_translate("Dialog", "Штрихкодик"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Dialog", "Заказ"))
         self.label_11.setText(_translate("Dialog", "Просмотреть отчет"))

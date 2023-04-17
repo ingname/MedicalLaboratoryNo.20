@@ -117,7 +117,63 @@ def open_paccient_add():
     ui3.setupUi(paccient_add)
     return_window2()
     ui3.pushButton_14.clicked.connect(lambda: return_window3())
-    ui3.pushButton_13.clicked.connect(lambda: ui3.data_insert())
+    ui3.pushButton_13.clicked.connect(lambda: data_insert())
+
+    def data_insert():
+        sename = ui3.lineEdit.text()
+        name = ui3.lineEdit_3.text()
+        birth_day = ui3.lineEdit_4.text()
+        ser_pas = ui3.lineEdit_5.text()
+        nom_pas = ui3.lineEdit_6.text()
+        phone = ui3.lineEdit_7.text()
+        email = ui3.lineEdit_8.text()
+        polis = ui3.lineEdit_9.text()
+
+        connection = False
+
+        try:
+            connection = psycopg2.connect(
+                host=host,
+                user=user,
+                port=port,
+                database=db_name,
+                password=password
+            )
+            with connection.cursor() as cursor:
+                cursor.execute("""SELECT id
+    	FROM public.patient;""")
+                idlast = int(cursor.fetchall()[-1][0])
+
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    f"""INSERT INTO public.patient(
+    	email, social_sec_number, social_type, phone, passport_s, passport_n, birthdate_timestamp, id, name, lastname, insurance)
+    	VALUES ('{email}', {polis}, {2}, '{phone}', {ser_pas}, {nom_pas}, '{birth_day}', {idlast + 1}, '{name}', '{sename}', '{5}');"""
+                )
+            connection.commit()
+            connection.close()
+            cursor.close()
+            timer2 = Timer(3.00, ui3.label_27.close)
+            timer2.start()
+            ui3.label_27.show()
+            ui3.label_27.setText('Данные занесены!')
+            ui2.lineEdit.setText(sename)
+            ui2.lineEdit_3.setText(name)
+            return_window3()
+
+
+        except Exception as _ex:
+            print("[ИНФО] Ошибка при работе с PostrgeSQL:", _ex)
+            timer2 = Timer(3.00, ui3.label_27.close)
+            timer2.start()
+            ui3.label_27.show()
+            ui3.label_27.setText('Вы не ввели данные или данные имеют плохой тип')
+
+        finally:
+            if connection:
+                cursor.close()
+                connection.close()
+
 
 def return_window13414():
     barcode_add.close()
@@ -220,6 +276,10 @@ def open_window():
 
                 Dialog.close()
                 OtherDialog.show()
+                ui.pushButton_3.close()
+                ui.lineEdit_3.close()
+                ui.lineEdit_3.setText('')
+                ui.label_18.setText('')
 
             else:
                 capimg()
@@ -270,9 +330,10 @@ def open_window():
         timers.disconnect()
 
     def return_hui():
+        timers.disconnect()
         OtherDialog.close()
         Dialog.show()
-        timers.disconnect()
+
 
     def timer():
         try:
@@ -297,7 +358,7 @@ def open_window():
                     ui2.label_13.setText(f'Окончание сенса через: {int(ui2.now_m - 1)}:0{int(ui2.now_s)}')
                 ui2.label_13.show()
         except:
-            pass
+            timers.disconnect()
 
     def end_of_session():
         timers.disconnect()
