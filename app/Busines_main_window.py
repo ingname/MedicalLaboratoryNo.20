@@ -349,7 +349,7 @@ class Ui_Dialog_2(object):
         self.label_9.resize(pixmap.width(), pixmap.height())
         self.label_12.setPixmap(pixmap)
         self.label_12.resize(pixmap.width(), pixmap.height())
-        pixmap = QPixmap("img/laborant_1.jpg")
+        pixmap = QPixmap("img/laborant_2.png")
         self.label_4.setPixmap(pixmap)
         self.label_4.resize(pixmap.width(), pixmap.height())
         os.remove("data_pass.txt")
