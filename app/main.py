@@ -20,6 +20,7 @@ Dialog = QtWidgets.QDialog()
 ui = Ui1()
 ui.setupUi(Dialog)
 Dialog.show()
+
 # mus = pyglet.resource.media("ballin.mp3")
 # mus.play()
 
@@ -31,7 +32,61 @@ def open_service_window():
     ui5.setupUi(open_service)
     open_window_service()
     ui5.pushButton_13.clicked.connect(lambda: return_windowdd())
+    ui5.pushButton_12.clicked.connect(lambda: Huiesosi())
 
+    def Huiesosi():
+        spisok = []
+        try:
+            if ui5.checkBox.checkState() == 2:
+                spisok.append(f'{ui5.checkBox.text()}')
+            if ui5.checkBox_2.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_2.text()}')
+            if ui5.checkBox_3.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_3.text()}')
+            if ui5.checkBox_4.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_4.text()}')
+            if ui5.checkBox_5.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_5.text()}')
+            if ui5.checkBox_6.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_6.text()}')
+            if ui5.checkBox_7.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_7.text()}')
+            if ui5.checkBox_8.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_8.text()}')
+            if ui5.checkBox_9.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_9.text()}')
+            if ui5.checkBox_10.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_10.text()}')
+            if ui5.checkBox_11.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_11.text()}')
+            if ui5.checkBox_12.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_12.text()}')
+            if ui5.checkBox_13.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_13.text()}')
+            if ui5.checkBox_14.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_14.text()}')
+            if ui5.checkBox_15.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_15.text()}')
+            if ui5.checkBox_16.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_16.text()}')
+            if ui5.checkBox_17.checkState() == 2:
+                spisok.append(f'{ui5.checkBox_17.text()}')
+            elif ui5.checkBox.checkState() != 2 and ui5.checkBox_2.checkState() != 2 and ui5.checkBox_3.checkState() != 2 and ui5.checkBox_4.checkState() != 2 and ui5.checkBox_5.checkState() != 2 and ui5.checkBox_6.checkState() != 2 and ui5.checkBox_7.checkState() != 2 and ui5.checkBox_8.checkState() != 2 and ui5.checkBox_9.checkState() != 2 and ui5.checkBox_10.checkState() != 2 and ui5.checkBox_11.checkState() != 2 and ui5.checkBox_12.checkState() != 2 and ui5.checkBox_13.checkState() != 2 and ui5.checkBox_14.checkState() != 2 and ui5.checkBox_15.checkState() != 2 and ui5.checkBox_16.checkState() != 2 and ui5.checkBox_17.checkState() != 2:
+
+                timer2 = Timer(3.00, ui5.label_23.close)
+                timer2.start()
+                ui5.label_23.setText('Вы не выбрали услуги')
+                ui5.label_23.show()
+
+
+        except Exception as _ex:
+            print(_ex)
+
+        if spisok != []:
+            return_windowdd2()
+            ui.label_24.setText(str(spisok))
+        else:
+            pass
 
 def open_barcode_add():
     global barcode_add
@@ -182,6 +237,9 @@ def return_window13414():
 def return_windowdd():
     open_service.close()
     OtherDialog.show()
+def return_windowdd2():
+    open_service.close()
+    OtherDialog.show()
 
 def open_window_barcode():
     OtherDialog.close()
@@ -213,6 +271,7 @@ def open_window():
     ui2.setupUi(OtherDialog)
 
     ui.pushButton_3.clicked.connect(lambda: capimg())
+
 
 
 
@@ -280,6 +339,8 @@ def open_window():
                 ui.lineEdit_3.close()
                 ui.lineEdit_3.setText('')
                 ui.label_18.setText('')
+                global spisoks
+                spisoks = []
 
             else:
                 capimg()
@@ -324,58 +385,57 @@ def open_window():
     def return_window():
         OtherDialog.close()
         Dialog.show()
-        barcode_add.close()
-        return_window4()
-
         timers.disconnect()
 
     def return_hui():
-        timers.disconnect()
         OtherDialog.close()
         Dialog.show()
 
-
     def timer():
-        try:
-            if ui2.now_m - 1 == 0 and ui2.now_s == 0:
-                end_of_session()
-                return False
-            if ui2.now % 60 == 0:
-                ui2.now_m = ui2.now / 60
-                ui2.label_2.setText(f'{int(ui2.now_m - 1)}:{int(ui2.now_s)}')
-                ui2.now2 = 59
-            if ui2.now2 % 1 == 0:
-                ui2.now_s = ui2.now2
-                ui2.label_2.setText(f'{int(ui2.now_m - 1)}:{int(ui2.now_s)}')
-                ui2.now2 -= 1
-                ui2.now -= 1
+        if ui2.now_m - 1 == 0 and ui2.now_s == 0:
+            end_of_session()
+            return
+        if ui2.now % 60 == 0:
+            ui2.now_m = ui2.now / 60
+            ui2.label_2.setText(f'{int(ui2.now_m - 1)}:{int(ui2.now_s)}')
+            ui2.now2 = 59
+        if ui2.now2 % 1 == 0:
+            ui2.now_s = ui2.now2
+            ui2.label_2.setText(f'{int(ui2.now_m - 1)}:{int(ui2.now_s)}')
+            ui2.now2 -= 1
+            ui2.now -= 1
+        if ui2.now_s < 10:
+            ui2.now_s = ui2.now2 + 1
+            ui2.label_2.setText(f'{int(ui2.now_m - 1)}:0{int(ui2.now_s)}')
+        if ui2.now_m <= 5:
+            ui2.label_13.setText(f'Окончание сенса через: {int(ui2.now_m - 1)}:{int(ui2.now_s)}')
             if ui2.now_s < 10:
-                ui2.now_s = ui2.now2 + 1
-                ui2.label_2.setText(f'{int(ui2.now_m - 1)}:0{int(ui2.now_s)}')
-            if ui2.now_m <= 5:
-                ui2.label_13.setText(f'Окончание сенса через: {int(ui2.now_m - 1)}:{int(ui2.now_s)}')
-                if ui2.now_s < 10:
-                    ui2.label_13.setText(f'Окончание сенса через: {int(ui2.now_m - 1)}:0{int(ui2.now_s)}')
-                ui2.label_13.show()
-        except:
-            timers.disconnect()
+                ui2.label_13.setText(f'Окончание сенса через: {int(ui2.now_m - 1)}:0{int(ui2.now_s)}')
+            ui2.label_13.show()
 
     def end_of_session():
         timers.disconnect()
+        return_hui()
         ui.label_2.setText('Отдохните минуту')
         ui.label_2.show()
         ui.pushButton.hide()
         timer2 = Timer(5.00, huiny)
         timer2.start()
-        return_window()
+
 
 
     def zaebalsya():
+        text_1 = ui.label_24.text()
+        spisok = text_1.replace('[', '')
+        spisok = spisok.replace(']', '')
+        spisok = spisok.replace("'", '')
+        spisok = spisok.split(', ')
+        print(spisok)
         qr = ui2.label_23.text()
         sename = ui2.lineEdit.text()
         name = ui2.lineEdit_3.text()
 
-        if qr != '' and sename != '' and name != '':
+        if qr != '' and sename != '' and name != '' and spisok != []:
 
             qr = int(ui2.label_23.text())
             connection = False
@@ -406,6 +466,15 @@ def open_window():
         FROM public.patient WHERE name = '{name}' and lastname = '{sename}';''')
                     id_pac = int(cur.fetchall()[0][0])
                     cur.execute(f'''INSERT INTO orders(order_id, id_patient) VALUES ({qr}, {id_pac});''')
+                    b = 0
+                    cur.execute(f'''SELECT id_ods FROM public.orders_service''')
+                    ids_last = int(cur.fetchall()[-1][0])
+                    for i in spisok:
+                        cur.execute(f'''SELECT "Code" FROM public.services WHERE "Service" = '{spisok[b]}';''')
+                        chislo = cur.fetchall()[0][0]
+                        cur.execute(f'''INSERT INTO public.orders_service(id_ods, order_id, services_id) VALUES ({ids_last+(b+1)}, {qr}, {int(chislo)});''')
+                        b += 1
+                        connection.commit()
                     connection.commit()
                     connection.close()
                     cur.close()
@@ -413,7 +482,8 @@ def open_window():
                     ui2.label_19.setText('Запись успешно занесена')
                     timer2 = Timer(3.00, ui2.label_19.close)
                     timer2.start()
-            except:
+            except Exception as _ex:
+                print(_ex)
                 ui2.label_19.show()
                 ui2.label_19.setText('Такая запись уже существует')
                 timer2 = Timer(3.00, ui2.label_19.close)
@@ -434,10 +504,7 @@ def open_window():
     timers.timeout.connect(timer)
     timers.start(1000)
 
-
-
-
-    ui2.pushButton_8.clicked.connect(lambda: return_hui())
+    ui2.pushButton_8.clicked.connect(lambda: return_window())
     ui2.pushButton_10.clicked.connect(lambda: open_paccient_add())
     ui2.pushButton_12.clicked.connect(lambda: open_barcode_add())
     ui2.pushButton_9.clicked.connect(lambda: zaebalsya())

@@ -125,6 +125,22 @@ class Ui_Dialog(object):
         self.label_18.setText('')
         self.lineEdit_3.setText('')
 
+        self.label_24 = QtWidgets.QLabel(Dialog)
+        self.label_24.setGeometry(QtCore.QRect(0, 0, 161, 161))
+        font = QtGui.QFont()
+        font.setFamily("Comic Sans MS")
+        font.setPointSize(24)
+        self.label_24.setFont(font)
+        self.label_24.setStyleSheet("color: rgb(73, 140, 81);")
+        self.label_24.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_24.setLineWidth(0)
+        self.label_24.setText("")
+        self.label_24.setTextFormat(QtCore.Qt.AutoText)
+        self.label_24.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_24.setObjectName("label_24")
+        self.label_24.setText("")
+        self.label_24.close()
+
         self.time_error = 0
 
 
