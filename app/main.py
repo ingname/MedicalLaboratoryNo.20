@@ -6,6 +6,7 @@ from Laborant_main_window import Ui_Dialog_2 as Ui2L
 from Laborant_add_paccient import Ui_Laborant_add_paccient as Ui3L
 from Laborant_barcode_window import Ui_Laborant_barcode as Ui4L
 from Laborant_service_window import Ui_Choose_Service as Ui5L
+from Busines_main_window import Ui_Dialog_2 as Ui2B
 import psycopg2
 from threading import Timer
 from PyQt5.QtCore import QTimer
@@ -266,13 +267,7 @@ def return_window2():
 def open_window():
     global OtherDialog
     OtherDialog = QtWidgets.QDialog()
-    global ui2
-    ui2 = Ui2L()
-    ui2.setupUi(OtherDialog)
-
     ui.pushButton_3.clicked.connect(lambda: capimg())
-
-
 
 
     def capimg():
@@ -331,7 +326,20 @@ def open_window():
                 with open("data_pass.txt", 'w') as f:
                     f.write(f"{str(user_password)}")
 
-                ui2.insert()
+                cur.execute(f'''SELECT type FROM public.users WHERE login = '{str(user_login)}';''')
+                syka = str(cur.fetchall()[0][0])
+                print(syka)
+                if syka == '1':
+                    global ui2
+                    ui2 = Ui2L()
+                    ui2.setupUi(OtherDialog)
+                    ui2.insert()
+                if syka == '2' or syka == '3':
+                    global ui2b
+                    ui2 = Ui2B()
+                    ui2.setupUi(OtherDialog)
+                    ui2.insert()
+                    ui2.tab_2.close()
 
                 Dialog.close()
                 OtherDialog.show()
