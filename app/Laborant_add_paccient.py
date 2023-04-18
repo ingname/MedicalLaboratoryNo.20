@@ -215,6 +215,10 @@ class Ui_Laborant_add_paccient(object):
         self.label_25.setText(_translate("Laborant_add_paccient", "Тип страхового полиса "))
         self.label_26.setText(_translate("Laborant_add_paccient", "Страховая компания"))
         self.label_27.setText(_translate("Laborant_add_paccient", "Вы не ввели данные или данные имеют плохой тип"))
+        self.comboBox.close()
+        self.comboBox_2.close()
+        self.label_25.close()
+        self.label_26.close()
 
 
 if __name__ == "__main__":

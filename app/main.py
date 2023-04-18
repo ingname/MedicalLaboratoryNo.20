@@ -7,11 +7,14 @@ from Laborant_add_paccient import Ui_Laborant_add_paccient as Ui3L
 from Laborant_barcode_window import Ui_Laborant_barcode as Ui4L
 from Laborant_service_window import Ui_Choose_Service as Ui5L
 from Busines_main_window import Ui_Dialog_2 as Ui2B
+from Admin_main_window import Ui_Dialog_2 as Ui2A
 import psycopg2
 from threading import Timer
 from PyQt5.QtCore import QTimer
 from cfg import *
 from PyQt5.QtGui import QPixmap
+from mane import MyTableModel
+from PyQt5 import QtGui
 # import pyglet
 
 
@@ -328,15 +331,20 @@ def open_window():
 
                 cur.execute(f'''SELECT type FROM public.users WHERE login = '{str(user_login)}';''')
                 syka = str(cur.fetchall()[0][0])
-                print(syka)
                 if syka == '1':
                     global ui2
                     ui2 = Ui2L()
                     ui2.setupUi(OtherDialog)
                     ui2.insert()
-                if syka == '2' or syka == '3':
+                if syka == '2':
                     global ui2b
                     ui2 = Ui2B()
+                    ui2.setupUi(OtherDialog)
+                    ui2.insert()
+                    ui2.tab_2.close()
+                if syka == '3':
+                    global ui2A
+                    ui2 = Ui2A()
                     ui2.setupUi(OtherDialog)
                     ui2.insert()
                     ui2.tab_2.close()
@@ -389,7 +397,63 @@ def open_window():
             ui.lineEdit_3.show()
             capimg()
             print(_ex)
+
+        def table(type):
+            # Параметры подключения к базе данных PostgreSQL
+            dbname = 'tilt1'
+            user = 'postgres'
+            password = 'zxcwexzxc'
+            host = 'localhost'
+            port = '5432'
+
+            # Подключение к базе данных PostgreSQL
+            conn = psycopg2.connect(dbname=dbname, user=user, password=password, host=host, port=port)
+            cur = conn.cursor()
+            if type == '1':
+                # Выполнение запроса на получение данных из таблицы
+                cur.execute("""SELECT orders.order_id, patient.name, patient.lastname,orders_service.services_id
+                                FROM orders
+                                JOIN patient ON patient.id = orders.id_patient
+                                JOIN orders_service ON orders.order_id = orders_service.order_id""")
+                data = cur.fetchall()
+
+                b = 0
+                for i in data:
+                    data3 = data[b][3]
+                    cur.execute(f'''SELECT "Service"
+                            FROM public.services WHERE "Code" = {int(data3)};''')
+                    pidor = cur.fetchall()[0][0]
+                    data[b] = (data[b][0], data[b][1], data[b][2], pidor)
+                    b += 1
+                model = MyTableModel(data)
+                ui2.tableView.setModel(model)
+                ui2.tableView.setColumnWidth(0, 500)
+                ui2.tableView.setColumnWidth(1, 200)
+                ui2.tableView.setColumnWidth(2, 200)
+            if type == '2':
+                cur.execute("""SELECT * FROM insurance;""")
+                data = cur.fetchall()
+                model = MyTableModel(data)
+                ui2.tableView.setModel(model)
+                ui2.tableView.setColumnWidth(0, 50)
+                ui2.tableView.setColumnWidth(1, 200)
+                ui2.tableView.setColumnWidth(2, 250)
+                ui2.tableView.setColumnWidth(4, 250)
+                ui2.tableView.setColumnWidth(5, 250)
+            if type == '3':
+                cur.execute("""SELECT name, lastenter, lastname FROM public.users;""")
+                data = cur.fetchall()
+                model = MyTableModel(data)
+                ui2.tableView.setModel(model)
+                ui2.tableView.setColumnWidth(1, 200)
+
+            # Создание модели и установка ее для таблицы
+            ui2.tableView.setFont(QtGui.QFont("Comic Sans MS", 14))
+
+        table(syka)
+
     log()
+
     def return_window():
         OtherDialog.close()
         Dialog.show()

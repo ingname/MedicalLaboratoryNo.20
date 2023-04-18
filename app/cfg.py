@@ -1,5 +1,5 @@
 host = 'localhost'
 user = 'postgres'
-password = '7393'
-db_name = 'kakatb'
+password = 'zxcwexzxc'
+db_name = 'tilt1'
 port = '5432'
